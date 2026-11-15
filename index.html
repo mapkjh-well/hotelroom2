@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Pretendard / Noto Sans KR / Inter -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -35,7 +35,6 @@
       background-color: #F8FAFC;
       color: #0F172A;
     }
-    /* Custom Scrollbar for horizontal pill bars */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -54,17 +53,16 @@
 </head>
 <body class="antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- Toast Notification (alert() 대체) -->
+  <!-- Toast Notification -->
   <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 opacity-0 translate-y-4">
     <div class="bg-slate-900 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-2.5 text-sm font-medium border border-slate-700">
       <i class="fa-solid fa-circle-check text-emerald-400"></i>
-      <span id="toast-message">복사되었습니다.</span>
+      <span id="toast-message">클립보드에 복사되었습니다.</span>
     </div>
   </div>
 
-  <!-- Hero Banner -->
+  <!-- Hero Header -->
   <header class="relative bg-gradient-to-br from-[#0F172A] via-[#0B2559] to-[#0052CC] text-white overflow-hidden">
-    <!-- Subtle Geometric Pattern Overlay -->
     <div class="absolute inset-0 opacity-10 pointer-events-none">
       <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
         <defs>
@@ -82,28 +80,28 @@
           <i class="fa-solid fa-atom text-blue-300"></i> 첨단소재나노융합 혁신융합대학사업단
         </span>
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-slate-200 border border-white/15">
-          <i class="fa-solid fa-location-dot text-rose-400"></i> 행사장 기준: 김대중컨벤션센터 (광주 서구)
+          <i class="fa-solid fa-location-dot text-rose-400"></i> 행사장: 김대중컨벤션센터 (광주 서구)
         </span>
       </div>
 
       <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
         2026 CO-SHOW<br class="sm:hidden" /> 첨단소재나노융합<br />
-        <span class="text-blue-300">참가학생 종합 안내</span>
+        <span class="text-blue-300">참가자 종합 안내</span>
       </h1>
 
       <p class="text-slate-200 text-sm sm:text-base max-w-2xl leading-relaxed mb-8">
-        행사 기간(2026. 11. 18. ~ 11. 20.) 동안 참가학생 여러분의 원활한 일정 소화를 위한 지정 식당 이용 방법, 지정 숙박 장소 정보 및 개인별 숙박·참가 일정을 한눈에 확인하실 수 있습니다.
+        행사 기간(2026. 11. 18. ~ 11. 20.) 동안 조·중·석식 지정 식당, 호텔 숙소 안내 및 50명 참가학생별 방 배정 및 일정을 간편하게 확인하실 수 있습니다.
       </p>
 
-      <!-- Quick Info Cards in Hero -->
+      <!-- Quick Metrics -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 flex items-center gap-3.5">
-          <div class="w-11 h-11 rounded-xl bg-blue-500/30 flex items-center justify-center text-blue-200 shrink-0">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/30 flex items-center justify-center text-amber-200 shrink-0">
             <i class="fa-solid fa-utensils text-lg"></i>
           </div>
           <div>
-            <div class="text-xs text-blue-200 font-medium">지정 식당 운영</div>
-            <div class="text-sm sm:text-base font-bold text-white">조식·중식·석식 총 7곳</div>
+            <div class="text-xs text-amber-200 font-medium">지정 식당 운영</div>
+            <div class="text-sm sm:text-base font-bold text-white">조식 1곳 · 중식 3곳 · 석식 3곳</div>
           </div>
         </div>
         <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 flex items-center gap-3.5">
@@ -120,15 +118,15 @@
             <i class="fa-solid fa-users text-lg"></i>
           </div>
           <div>
-            <div class="text-xs text-emerald-200 font-medium">참가학생 일정 조회</div>
-            <div class="text-sm sm:text-base font-bold text-white">총 50명 개인별 실시간 조회</div>
+            <div class="text-xs text-emerald-200 font-medium">참가학생 방배정</div>
+            <div class="text-sm sm:text-base font-bold text-white">숙박 35명 · 당일 15명</div>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Sticky Top Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav id="sticky-nav" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-14 sm:h-16 overflow-x-auto no-scrollbar gap-2">
@@ -137,43 +135,42 @@
             <i class="fa-solid fa-layer-group mr-1.5"></i>전체보기
           </button>
           <button onclick="switchMainTab('dining')" id="nav-dining" class="nav-tab-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-100">
-            <i class="fa-solid fa-bowl-food mr-1.5"></i>식당 안내
+            <i class="fa-solid fa-bowl-food mr-1.5"></i>식당 안내 (조·중·석)
           </button>
           <button onclick="switchMainTab('lodging')" id="nav-lodging" class="nav-tab-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-100">
             <i class="fa-solid fa-bed mr-1.5"></i>숙박 장소
           </button>
           <button onclick="switchMainTab('schedule')" id="nav-schedule" class="nav-tab-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-100">
-            <i class="fa-solid fa-magnifying-glass mr-1.5"></i>숙박·참가 일정 조회
+            <i class="fa-solid fa-magnifying-glass mr-1.5"></i>방배정 및 일정 조회
           </button>
         </div>
         <div class="hidden md:flex items-center text-xs text-slate-500 font-medium shrink-0">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>김대중컨벤션센터 기준 안내
+          <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>김대중컨벤션센터 기준
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content Container -->
+  <!-- Main Container -->
   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-14">
 
-    <!-- ===================================================================== -->
-    <!-- [섹션 1: 식사 및 지정 식당 안내] -->
-    <!-- ===================================================================== -->
+    <!-- ================================================================= -->
+    <!-- SECTION 1: 식사 및 지정 식당 안내 -->
+    <!-- ================================================================= -->
     <section id="section-dining" class="main-section scroll-mt-20">
-      <!-- Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2">
         <div>
           <span class="inline-block text-xs font-extrabold tracking-wider uppercase text-[#0052CC] bg-blue-50 px-3 py-1 rounded-full mb-2">
             SECTION 01 · DINING GUIDE
           </span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">식사 및 지정 식당 안내</h2>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">식사 및 지정 식당 안내 (조·중·석)</h2>
         </div>
         <p class="text-xs sm:text-sm text-slate-500">
-          <i class="fa-solid fa-person-walking text-[#0052CC] mr-1"></i>모든 거리 및 소요시간은 <strong>김대중컨벤션센터</strong> 기준입니다.
+          <i class="fa-solid fa-person-walking text-[#0052CC] mr-1"></i>모든 거리는 김대중컨벤션센터 기준입니다.
         </p>
       </div>
 
-      <!-- Common Usage Method Banner (Highlighted) -->
+      <!-- Common Usage Banner -->
       <div class="bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white rounded-2xl p-5 sm:p-7 shadow-lg mb-8 border border-blue-800/50">
         <div class="flex items-center gap-2.5 mb-4">
           <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 text-xs font-extrabold">필독</span>
@@ -183,38 +180,38 @@
           <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
             <div class="w-7 h-7 rounded-full bg-[#0052CC] text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">1</div>
             <div>
-              <div class="font-bold text-sm sm:text-base text-blue-200 mb-1">소속 안내하기</div>
-              <p class="text-xs sm:text-sm text-slate-100 leading-relaxed">
-                식당 방문 후 직원에게 <strong class="text-amber-300 underline decoration-amber-300/60 underline-offset-4">'첨단소재(중앙대)'</strong>라고 말씀해주세요.
+              <div class="font-bold text-sm text-blue-200 mb-1">소속 말씀하기</div>
+              <p class="text-xs text-slate-100 leading-relaxed">
+                식당 방문 후 직원에게 <strong class="text-amber-300">'첨단소재(중앙대)'</strong>라고 말씀해주세요.
               </p>
             </div>
           </div>
           <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
             <div class="w-7 h-7 rounded-full bg-[#0052CC] text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">2</div>
             <div>
-              <div class="font-bold text-sm sm:text-base text-blue-200 mb-1">방문 명부 작성</div>
-              <p class="text-xs sm:text-sm text-slate-100 leading-relaxed">
-                매장 내 비치된 <strong>방문 명부에 본인의 소속(대학)과 성명</strong>을 정확히 작성합니다.
+              <div class="font-bold text-sm text-blue-200 mb-1">방문 명부 작성</div>
+              <p class="text-xs text-slate-100 leading-relaxed">
+                비치된 방문 명부에 <strong>본인의 소속(대학)과 성명</strong>을 정확히 기재합니다.
               </p>
             </div>
           </div>
           <div class="bg-white/10 border border-white/15 rounded-xl p-4 flex items-start gap-3">
             <div class="w-7 h-7 rounded-full bg-[#0052CC] text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">3</div>
             <div>
-              <div class="font-bold text-sm sm:text-base text-blue-200 mb-1">지정 메뉴 택1 주문</div>
-              <p class="text-xs sm:text-sm text-slate-100 leading-relaxed">
-                식당별 지정된 <strong>메뉴 2종 중 1가지를 선택</strong>하여 주문합니다. (운영팀 일괄 정산)
+              <div class="font-bold text-sm text-blue-200 mb-1">지정 메뉴 택1 주문</div>
+              <p class="text-xs text-slate-100 leading-relaxed">
+                식당별 지정된 <strong>메뉴 2종 중 1가지를 선택</strong>하여 주문합니다.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Time Slot Filter Tabs -->
+      <!-- Meal Filter Tabs -->
       <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
           <button onclick="filterRestaurants('all')" data-meal="all" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#0052CC] text-white shadow-sm transition-all">
-            전체 (7곳)
+            전체 식당 (7곳)
           </button>
           <button onclick="filterRestaurants('breakfast')" data-meal="breakfast" class="meal-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all">
             <i class="fa-solid fa-sun text-amber-500 mr-1"></i>조식 (1곳)
@@ -228,17 +225,17 @@
         </div>
       </div>
 
-      <!-- Restaurant Cards Grid -->
+      <!-- Restaurant Grid -->
       <div id="restaurant-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Rendered by JavaScript -->
+        <!-- Rendered via JS -->
       </div>
     </section>
 
     <hr class="border-slate-200">
 
-    <!-- ===================================================================== -->
-    <!-- [섹션 2: 지정 숙박 장소 안내] -->
-    <!-- ===================================================================== -->
+    <!-- ================================================================= -->
+    <!-- SECTION 2: 지정 숙박 장소 안내 -->
+    <!-- ================================================================= -->
     <section id="section-lodging" class="main-section scroll-mt-20">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2">
         <div>
@@ -248,11 +245,11 @@
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">지정 숙박 장소 안내</h2>
         </div>
         <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0052CC] bg-blue-50 px-3.5 py-1.5 rounded-xl border border-blue-100">
-          <i class="fa-solid fa-user-check"></i> 전 객실 더블룸 1인실 기준 배정
+          <i class="fa-solid fa-user-check"></i> 전 객실 더블룸 1인실 기준
         </span>
       </div>
 
-      <!-- Prominent Notice Banner for On-site Room Assignment -->
+      <!-- Notice for On-site Room Assignment -->
       <div class="bg-gradient-to-r from-blue-900 via-[#0F172A] to-blue-950 text-white rounded-2xl p-5 sm:p-6 mb-6 shadow-md border border-blue-800/60 flex items-center gap-4">
         <div class="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center text-xl shrink-0 font-extrabold shadow">
           <i class="fa-solid fa-key"></i>
@@ -263,40 +260,33 @@
             ※ 객실 방 배정은 당일 현장 배정됩니다.
           </div>
           <p class="text-xs text-slate-300 mt-1">
-            체크인 시 신분증 확인 및 현장 안내에 따라 호실이 배정되오니 참고하시기 바랍니다.
+            체크인 시 현장 운영진 안내에 따라 지정된 호실로 배정됩니다. (당일 참가 인원은 숙소 배정에서 제외됩니다.)
           </p>
         </div>
       </div>
 
-      <!-- Hotel Comparison Cards (Images Removed, Pure Text & Info Layout) -->
+      <!-- Hotel Cards Grid (No Photos) -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <!-- Hotel 1: 호텔 란타나 -->
+        <!-- Hotel 1 -->
         <div class="bg-white rounded-2xl shadow-md border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow">
           <div>
-            <!-- Top Badge Header -->
             <div class="bg-[#0052CC] px-6 py-5 flex items-center justify-between text-white">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-building text-blue-200 text-lg"></i>
                 <h3 class="text-xl font-extrabold tracking-tight">호텔 란타나 <span class="text-xs font-medium text-blue-200 ml-1">Hotel Lantana</span></h3>
               </div>
-              <span class="px-3 py-1 rounded-full bg-white text-[#0052CC] text-xs font-extrabold shadow-sm">
-                더블룸 · 1인실
-              </span>
+              <span class="px-3 py-1 rounded-full bg-white text-[#0052CC] text-xs font-extrabold">더블룸 · 1인실</span>
             </div>
-
-            <!-- Info Details Table -->
             <div class="p-6 sm:p-7 space-y-5">
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-blue-50 text-[#0052CC] flex items-center justify-center shrink-0 mt-0.5">
                   <i class="fa-solid fa-location-dot"></i>
                 </div>
-                <div class="flex-1">
+                <div>
                   <div class="text-xs font-semibold text-slate-400 mb-0.5">숙소 주소</div>
                   <div class="text-sm sm:text-base font-bold text-slate-900">광주 서구 상무평화로 130</div>
-                  <div class="text-xs text-slate-500">(구 표기: 전남광주 서구 상무평화로 130)</div>
                 </div>
               </div>
-
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                   <i class="fa-solid fa-person-walking"></i>
@@ -306,60 +296,41 @@
                   <div class="text-sm sm:text-base font-bold text-emerald-700">김대중컨벤션센터까지 도보 약 15분</div>
                 </div>
               </div>
-
-              <div class="flex items-start gap-3.5">
-                <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
-                  <i class="fa-solid fa-sparkles"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-semibold text-slate-400 mb-0.5">시설 특징</div>
-                  <div class="text-sm text-slate-700">모던한 분위기 및 1인 전용 쾌적한 더블룸 객실 제공</div>
-                </div>
-              </div>
             </div>
           </div>
-
-          <!-- Action Buttons -->
           <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-wrap gap-2">
             <button onclick="copyAddress('광주 서구 상무평화로 130')" class="flex-1 min-w-[120px] py-2.5 px-3 rounded-xl bg-white border border-slate-200 hover:border-[#0052CC] text-slate-700 hover:text-[#0052CC] text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
               <i class="fa-regular fa-copy"></i> 주소 복사
             </button>
-            <a href="https://map.naver.com/p/search/광주%20서구%20상무평화로%20130" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#03C75A] hover:bg-[#02b350] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+            <a href="https://map.naver.com/p/search/광주%20서구%20상무평화로%20130" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#03C75A] text-white text-xs font-bold flex items-center justify-center gap-1.5">
               <span class="font-extrabold">N</span> 네이버지도
             </a>
-            <a href="https://map.kakao.com/link/search/광주 서구 상무평화로 130" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#FEE500] hover:bg-[#f5dc00] text-slate-900 text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+            <a href="https://map.kakao.com/link/search/광주 서구 상무평화로 130" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#FEE500] text-slate-900 text-xs font-bold flex items-center justify-center gap-1.5">
               <i class="fa-solid fa-location-arrow"></i> 카카오맵
             </a>
           </div>
         </div>
 
-        <!-- Hotel 2: 호텔 얌 -->
+        <!-- Hotel 2 -->
         <div class="bg-white rounded-2xl shadow-md border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow">
           <div>
-            <!-- Top Badge Header -->
             <div class="bg-[#0F172A] px-6 py-5 flex items-center justify-between text-white">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-hotel text-blue-300 text-lg"></i>
                 <h3 class="text-xl font-extrabold tracking-tight">호텔 얌 <span class="text-xs font-medium text-slate-300 ml-1">Hotel Yam</span></h3>
               </div>
-              <span class="px-3 py-1 rounded-full bg-blue-500 text-white text-xs font-extrabold shadow-sm">
-                더블룸 · 1인실
-              </span>
+              <span class="px-3 py-1 rounded-full bg-blue-500 text-white text-xs font-extrabold">더블룸 · 1인실</span>
             </div>
-
-            <!-- Info Details Table -->
             <div class="p-6 sm:p-7 space-y-5">
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-blue-50 text-[#0052CC] flex items-center justify-center shrink-0 mt-0.5">
                   <i class="fa-solid fa-location-dot"></i>
                 </div>
-                <div class="flex-1">
+                <div>
                   <div class="text-xs font-semibold text-slate-400 mb-0.5">숙소 주소</div>
                   <div class="text-sm sm:text-base font-bold text-slate-900">광주 서구 상무평화로 150</div>
-                  <div class="text-xs text-slate-500">(구 표기: 전남광주 서구 상무평화로 150)</div>
                 </div>
               </div>
-
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                   <i class="fa-solid fa-person-walking"></i>
@@ -369,192 +340,73 @@
                   <div class="text-sm sm:text-base font-bold text-emerald-700">김대중컨벤션센터까지 도보 약 19분</div>
                 </div>
               </div>
-
-              <div class="flex items-start gap-3.5">
-                <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
-                  <i class="fa-solid fa-laptop"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-semibold text-slate-400 mb-0.5">시설 특징</div>
-                  <div class="text-sm text-slate-700">깔끔한 객실 및 노트북 작업이 가능한 데스크 완비</div>
-                </div>
-              </div>
             </div>
           </div>
-
-          <!-- Action Buttons -->
           <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-wrap gap-2">
             <button onclick="copyAddress('광주 서구 상무평화로 150')" class="flex-1 min-w-[120px] py-2.5 px-3 rounded-xl bg-white border border-slate-200 hover:border-[#0052CC] text-slate-700 hover:text-[#0052CC] text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
               <i class="fa-regular fa-copy"></i> 주소 복사
             </button>
-            <a href="https://map.naver.com/p/search/광주%20서구%20상무평화로%20150" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#03C75A] hover:bg-[#02b350] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+            <a href="https://map.naver.com/p/search/광주%20서구%20상무평화로%20150" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#03C75A] text-white text-xs font-bold flex items-center justify-center gap-1.5">
               <span class="font-extrabold">N</span> 네이버지도
             </a>
-            <a href="https://map.kakao.com/link/search/광주 서구 상무평화로 150" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#FEE500] hover:bg-[#f5dc00] text-slate-900 text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+            <a href="https://map.kakao.com/link/search/광주 서구 상무평화로 150" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[110px] py-2.5 px-3 rounded-xl bg-[#FEE500] text-slate-900 text-xs font-bold flex items-center justify-center gap-1.5">
               <i class="fa-solid fa-location-arrow"></i> 카카오맵
             </a>
           </div>
-        </div>
-      </div>
-
-      <!-- Notice Box for Day Participants & Check-in -->
-      <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5">
-        <div class="w-9 h-9 rounded-xl bg-[#0052CC] text-white flex items-center justify-center shrink-0 mt-0.5">
-          <i class="fa-solid fa-circle-info"></i>
-        </div>
-        <div class="text-xs sm:text-sm text-slate-700 space-y-1 leading-relaxed">
-          <p class="font-bold text-slate-900">숙소 배정 및 당일참가 안내</p>
-          <p>• 숙박 대상자(2박 3일 및 1박 2일)는 위 2개 호텔 중 지정된 숙소의 <strong>더블룸 1인실</strong>로 배정됩니다. <strong class="text-[#0052CC]">(방 배정은 당일 현장 배정)</strong></p>
-          <p>• <strong>당일참가(0박 1일) 인원</strong>의 경우 별도 숙박이 제공되지 않으며, 해당 일자 당일 행사 일정으로 운영됩니다.</p>
         </div>
       </div>
     </section>
 
     <hr class="border-slate-200">
 
-    <!-- ===================================================================== -->
-    <!-- [섹션 3: 참가학생 개인별 숙박 및 참가 일정 조회] -->
-    <!-- ===================================================================== -->
+    <!-- ================================================================= -->
+    <!-- SECTION 3: 참가학생 방 배정 및 일정 조회 -->
+    <!-- ================================================================= -->
     <section id="section-schedule" class="main-section scroll-mt-20">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2">
         <div>
           <span class="inline-block text-xs font-extrabold tracking-wider uppercase text-[#0052CC] bg-blue-50 px-3 py-1 rounded-full mb-2">
-            SECTION 03 · STUDENT SCHEDULE LOOKUP
+            SECTION 03 · ROOM ASSIGNMENT & SCHEDULE
           </span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">참가학생 개인별 숙박 및 참가 일정 조회</h2>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">참가학생 방 배정 및 일정 조회</h2>
         </div>
         <p class="text-xs text-slate-500">
-          <i class="fa-solid fa-shield-halved text-[#0052CC] mr-1"></i>개인정보 보호를 위해 연락처·이메일은 비공개 처리되었습니다.
+          <i class="fa-solid fa-shield-halved text-[#0052CC] mr-1"></i>개인정보 보호를 위해 연락처는 비공개 처리되었습니다.
         </p>
       </div>
 
-      <!-- Summary Statistics Dashboard -->
+      <!-- Summary Cards -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-xs">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-slate-500">전체 참가학생</span>
-            <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center text-xs">
-              <i class="fa-solid fa-users"></i>
-            </span>
-          </div>
+          <div class="text-xs font-bold text-slate-500 mb-1">전체 참가학생</div>
           <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">50<span class="text-sm font-semibold text-slate-500 ml-1">명</span></div>
-          <div class="text-[11px] text-slate-400 mt-1">첨단소재나노융합 전체 명단</div>
         </div>
-
         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-blue-200 shadow-xs">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-[#0052CC]">2박 3일 숙박</span>
-            <span class="w-8 h-8 rounded-lg bg-blue-50 text-[#0052CC] flex items-center justify-center text-xs">
-              <i class="fa-solid fa-moon"></i>
-            </span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-[#0052CC]">17<span class="text-sm font-semibold text-blue-400 ml-1">명</span></div>
-          <div class="text-[11px] text-slate-500 mt-1">11/18(수) ~ 11/20(금) · 1인실</div>
+          <div class="text-xs font-bold text-[#0052CC] mb-1">숙박 대상 (2박/1박)</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-[#0052CC]">35<span class="text-sm font-semibold text-blue-400 ml-1">명</span></div>
         </div>
-
         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-indigo-200 shadow-xs">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-indigo-600">1박 2일 숙박</span>
-            <span class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center text-xs">
-              <i class="fa-solid fa-bed"></i>
-            </span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-600">18<span class="text-sm font-semibold text-indigo-400 ml-1">명</span></div>
-          <div class="text-[11px] text-slate-500 mt-1">11/19(목) 체크인 · 1인실</div>
+          <div class="text-xs font-bold text-indigo-600 mb-1">당일 참가 (숙소 제외)</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-600">15<span class="text-sm font-semibold text-indigo-400 ml-1">명</span></div>
         </div>
-
         <div class="bg-white rounded-2xl p-4 sm:p-5 border border-emerald-200 shadow-xs">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-emerald-600">당일참가 (0박 1일)</span>
-            <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs">
-              <i class="fa-solid fa-calendar-day"></i>
-            </span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600">15<span class="text-sm font-semibold text-emerald-400 ml-1">명</span></div>
-          <div class="text-[11px] text-slate-500 mt-1">해당일 당일 행사 참석</div>
+          <div class="text-xs font-bold text-emerald-600 mb-1">방 배정 완료</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600">35<span class="text-sm font-semibold text-emerald-400 ml-1">객실</span></div>
         </div>
       </div>
 
-      <!-- Daily Timeline Overview (11/18 Wed, 11/19 Thu, 11/20 Fri) -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 mb-8 shadow-xs">
-        <h3 class="text-sm sm:text-base font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-calendar-days text-[#0052CC]"></i> 일자별 참가 및 체크인 현황 타임라인
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <!-- Day 1: 11/18 -->
-          <div class="relative rounded-xl bg-slate-50 border border-slate-200/80 p-4">
-            <div class="flex items-center justify-between mb-2">
-              <span class="px-2.5 py-1 rounded-lg bg-[#0F172A] text-white text-xs font-extrabold">DAY 1 · 11월 18일 (수)</span>
-              <span class="text-xs font-bold text-[#0052CC]">총 22명 참여</span>
-            </div>
-            <ul class="text-xs text-slate-600 space-y-1.5 mt-3">
-              <li class="flex items-center justify-between">
-                <span>• 2박 3일 숙박자 체크인</span>
-                <span class="font-bold text-slate-800">17명</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span>• 11/18 당일참가 인원</span>
-                <span class="font-bold text-emerald-700">5명</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Day 2: 11/19 -->
-          <div class="relative rounded-xl bg-blue-50/50 border border-blue-200/80 p-4">
-            <div class="flex items-center justify-between mb-2">
-              <span class="px-2.5 py-1 rounded-lg bg-[#0052CC] text-white text-xs font-extrabold">DAY 2 · 11월 19일 (목)</span>
-              <span class="text-xs font-bold text-[#0052CC]">총 36명 참여</span>
-            </div>
-            <ul class="text-xs text-slate-600 space-y-1.5 mt-3">
-              <li class="flex items-center justify-between">
-                <span>• 2박 3일 연박 인원</span>
-                <span class="font-bold text-slate-800">17명</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span>• 1박 2일 숙박자 체크인</span>
-                <span class="font-bold text-indigo-700">18명</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span>• 11/19 당일참가 인원</span>
-                <span class="font-bold text-emerald-700">1명</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Day 3: 11/20 -->
-          <div class="relative rounded-xl bg-slate-50 border border-slate-200/80 p-4">
-            <div class="flex items-center justify-between mb-2">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-700 text-white text-xs font-extrabold">DAY 3 · 11월 20일 (금)</span>
-              <span class="text-xs font-bold text-[#0052CC]">총 43명 참여</span>
-            </div>
-            <ul class="text-xs text-slate-600 space-y-1.5 mt-3">
-              <li class="flex items-center justify-between">
-                <span>• 숙박자 체크아웃 (2박3일+1박2일)</span>
-                <span class="font-bold text-slate-800">34명*</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span>• 11/20 당일참가 인원</span>
-                <span class="font-bold text-emerald-700">9명</span>
-              </li>
-            </ul>
-            <p class="text-[11px] text-slate-400 mt-2">*1박 2일 중 1명은 11월 19일 단일 일정 표기</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Interactive Search & Filter Controls -->
+      <!-- Search and Filter Controls -->
       <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-md mb-6">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4">
-          <!-- Search Input -->
           <div class="md:col-span-6 relative">
-            <label for="student-search" class="block text-xs font-bold text-slate-600 mb-1.5">이름 · 대학 · 팀명 빠른 검색</label>
+            <label for="student-search" class="block text-xs font-bold text-slate-600 mb-1.5">이름 · 대학 · 팀명 검색</label>
             <div class="relative">
               <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
               <input
                 type="text"
                 id="student-search"
                 oninput="filterStudents()"
-                placeholder="본인 이름, 소속 대학, 또는 팀명을 입력하세요 (예: 조현준, 중앙대, OWNWAY)"
+                placeholder="이름, 소속 대학, 팀명을 입력하세요 (예: 조현준, 한남대학교)"
                 class="w-full pl-11 pr-10 py-3 rounded-xl border border-slate-300 focus:border-[#0052CC] focus:ring-2 focus:ring-blue-500/20 outline-none text-sm transition-all"
               />
               <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1">
@@ -562,61 +414,40 @@
               </button>
             </div>
           </div>
-
-          <!-- Team Filter Dropdown -->
           <div class="md:col-span-3">
             <label for="team-filter" class="block text-xs font-bold text-slate-600 mb-1.5">팀별 필터</label>
-            <select
-              id="team-filter"
-              onchange="filterStudents()"
-              class="w-full px-3.5 py-3 rounded-xl border border-slate-300 focus:border-[#0052CC] focus:ring-2 focus:ring-blue-500/20 outline-none text-sm bg-white font-medium"
-            >
+            <select id="team-filter" onchange="filterStudents()" class="w-full px-3.5 py-3 rounded-xl border border-slate-300 focus:border-[#0052CC] outline-none text-sm bg-white font-medium">
               <option value="all">전체 팀 보기 (15개 팀)</option>
             </select>
           </div>
-
-          <!-- Stay Type Filter Dropdown -->
           <div class="md:col-span-3">
-            <label for="stay-filter" class="block text-xs font-bold text-slate-600 mb-1.5">숙박 일정 필터</label>
-            <select
-              id="stay-filter"
-              onchange="filterStudents()"
-              class="w-full px-3.5 py-3 rounded-xl border border-slate-300 focus:border-[#0052CC] focus:ring-2 focus:ring-blue-500/20 outline-none text-sm bg-white font-medium"
-            >
+            <label for="stay-filter" class="block text-xs font-bold text-slate-600 mb-1.5">숙박/참가 일정 필터</label>
+            <select id="stay-filter" onchange="filterStudents()" class="w-full px-3.5 py-3 rounded-xl border border-slate-300 focus:border-[#0052CC] outline-none text-sm bg-white font-medium">
               <option value="all">전체 일정 (50명)</option>
-              <option value="2박 3일">2박 3일 (17명)</option>
-              <option value="1박 2일">1박 2일 (18명)</option>
-              <option value="0박 1일">당일참가 / 0박 1일 (15명)</option>
+              <option value="숙박대상">숙박 대상 (35명)</option>
+              <option value="당일참가">당일 참가 / 숙소제외 (15명)</option>
             </select>
           </div>
         </div>
-
-        <!-- Search Status Bar -->
-        <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
           <div id="search-result-count" class="font-bold text-slate-700">
             총 <span class="text-[#0052CC]">50</span>명의 참가학생 일정이 조회되었습니다.
-          </div>
-          <div class="flex items-center gap-2 text-slate-500">
-            <span class="inline-flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-[#0052CC]"></span>2박 3일</span>
-            <span class="inline-flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>1박 2일</span>
-            <span class="inline-flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>당일참가</span>
           </div>
         </div>
       </div>
 
       <!-- Student Cards Grid -->
       <div id="student-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Rendered by JavaScript -->
+        <!-- Rendered via JS -->
       </div>
 
-      <!-- Empty Search State -->
+      <!-- Empty State -->
       <div id="empty-student-state" class="hidden bg-white rounded-2xl border border-slate-200 p-10 text-center">
         <div class="w-14 h-14 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3 text-xl">
           <i class="fa-solid fa-user-slash"></i>
         </div>
-        <h3 class="text-base font-bold text-slate-800 mb-1">일치하는 참가학생 정보가 없습니다</h3>
-        <p class="text-xs sm:text-sm text-slate-500 mb-4">이름 철자나 소속 대학, 팀명을 다시 한 번 확인해주세요.</p>
-        <button onclick="resetAllStudentFilters()" class="px-4 py-2 rounded-xl bg-[#0052CC] text-white text-xs font-bold hover:bg-blue-700 transition-colors">
+        <h3 class="text-base font-bold text-slate-800 mb-1">일치하는 학생 정보가 없습니다</h3>
+        <button onclick="resetAllStudentFilters()" class="mt-3 px-4 py-2 rounded-xl bg-[#0052CC] text-white text-xs font-bold">
           검색 조건 초기화
         </button>
       </div>
@@ -626,14 +457,12 @@
 
   <!-- Footer -->
   <footer class="bg-[#0F172A] text-slate-400 border-t border-slate-800 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="text-center sm:text-left">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
         <div class="text-white font-extrabold text-sm sm:text-base mb-1">
           2026 CO-SHOW 첨단소재나노융합 혁신융합대학사업단
         </div>
-        <p class="text-xs text-slate-400">
-          행사 장소: 광주광역시 서구 상무누리로 30 김대중컨벤션센터 · 참가학생 전용 가이드 페이지
-        </p>
+        <p class="text-xs text-slate-400">행사 장소: 김대중컨벤션센터 · 참가학생 종합 안내 페이지</p>
       </div>
       <div class="text-xs text-slate-500">
         © 2026 첨단소재나노융합 사업단 운영팀. All rights reserved.
@@ -651,178 +480,157 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!-- Data & Interactive Logic -->
   <script>
-    // =========================================================================
-    // 1. 지정 식당 데이터 (비공개 관리자 메모 완전 제외, 확정 정보만 포함)
-    // =========================================================================
+    // Restaurants Data
     const restaurantsData = [
       {
         id: 1,
         mealType: 'breakfast',
         mealLabel: '조식',
         badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
-        statusBadge: '확정',
         name: '브로샌드위치',
         menuA: '햄치즈에그 샌드위치',
         menuB: '크랜베리 닭가슴살 샌드위치',
         distance: '도보 15분 (985m)',
         address: '광주 서구 치평로 2, 1층 104호',
         phone: '0507-1498-2577',
-        point: '샌드위치 2종 중 택1 주문 가능',
-        isPending: false
+        point: '샌드위치 2종 중 택1 주문 가능'
       },
       {
         id: 2,
         mealType: 'lunch',
         mealLabel: '중식',
         badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
-        statusBadge: '확정',
         name: '맛과향',
         menuA: '비빔밥',
         menuB: '제육볶음',
         distance: '도보 9분 (634m)',
-        address: '광주 서구 상무공원로 33, 상무1차우미아파트 상가동 1층 110~111호',
+        address: '광주 서구 상무공원로 33, 상가동 1층 110~111호',
         phone: '062-372-9100',
-        point: '제육볶음은 2인 이상 주문 가능 / 점심시간 혼잡으로 시간 분산 방문 권장',
-        isPending: false
+        point: '제육볶음은 2인 이상 주문 가능 / 점심시간 혼잡 시 시간 분산 방문'
       },
       {
         id: 3,
         mealType: 'lunch',
         mealLabel: '중식',
         badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
-        statusBadge: '확정',
         name: '일담',
         menuA: '수제 생 등심 돈카츠',
         menuB: '규동',
         distance: '도보 8분 (507m)',
         address: '광주 서구 상무화원로17번길 1, 1층',
         phone: '062-381-3788',
-        point: '일요일 정기휴무 (행사 기간 정상 영업)',
-        isPending: false
+        point: '일요일 정기휴무 (행사 기간 정상 영업)'
       },
       {
         id: 4,
         mealType: 'lunch',
         mealLabel: '중식',
         badgeColor: 'bg-orange-100 text-orange-800 border-orange-200',
-        statusBadge: '확정',
         name: '짬뽕회관 상무점',
         menuA: '대박짬뽕',
         menuB: '순두부짬뽕밥',
         distance: '도보 10분 (666m)',
         address: '광주 서구 상무공원로 1, 1층',
         phone: '0507-1379-6632',
-        point: '11월 18일(수) 11시·12시 타 단체 예약으로 혼잡 예상',
-        isPending: false
+        point: '11월 18일(수) 타 단체 예약으로 혼잡 예상'
       },
       {
         id: 5,
         mealType: 'dinner',
         mealLabel: '석식',
         badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-        statusBadge: '확정',
         name: '기호식품',
         menuA: '육개장',
         menuB: '순대국밥',
         distance: '도보 29분 (1.8km)',
         address: '광주 서구 상무번영로 12',
         phone: '062-375-9882',
-        point: '24시간 영업',
-        isPending: false
+        point: '24시간 영업'
       },
       {
         id: 6,
         mealType: 'dinner',
         mealLabel: '석식',
         badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-        statusBadge: '확정',
-        name: '홍익궁중전통육개장 상무점',
-        menuA: '전통육개장',
-        menuB: '전통닭개장',
-        distance: '도보 31분 (1.9km)',
-        address: '광주 서구 상무연하로 60, 1층',
-        phone: '062-376-3030',
-        point: '11월 21일(토) 휴무',
-        isPending: false
-      },
-      {
-        id: 7,
-        mealType: 'dinner',
-        mealLabel: '석식',
-        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-        statusBadge: '확인 중',
         name: '탄쇼',
         menuA: '연어덮밥',
         menuB: '튀김덮밥',
         distance: '도보 30분 (1.9km)',
         address: '광주 서구 상무자유로 174, 1층',
         phone: '062-384-8873',
-        point: '이용 가능 여부 최종 확인 중 (방문 전 운영팀 안내 확인 권장)',
-        isPending: true
+        point: '이용 가능 여부 확인 중 (방문 전 확인 권장)'
+      },
+      {
+        id: 7,
+        mealType: 'dinner',
+        mealLabel: '석식',
+        badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+        name: '홍익궁중전통육개장 상무점',
+        menuA: '전통육개장',
+        menuB: '전통닭개장',
+        distance: '도보 31분 (1.9km)',
+        address: '광주 서구 상무연하로 60, 1층',
+        phone: '062-376-3030',
+        point: '11월 21일(토) 휴무'
       }
     ];
 
-    // =========================================================================
-    // 2. 참가학생 전체 50명 데이터 (엑셀 '학생 숙박' 시트 기준 정확히 매핑)
-    // =========================================================================
+    // Students Data (All 50 students: 35 lodging with exact room assignments, 15 day participants excluded from lodging)
     const studentsData = [
-      { id: 1, name: '조현준', univ: '한남대학교', team: 'ANSIM', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 2, name: '홍현택', univ: '한남대학교', team: 'ANSIM', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 3, name: '이민경', univ: '한국기술교육대학교', team: 'OWNWAY', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 4, name: '여환철', univ: '인천대학교', team: 'OWNWAY', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 5, name: '명채은', univ: '명지대학교', team: 'OWNWAY', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 6, name: '이선우', univ: '한국기술교육대학교', team: 'OWNWAY', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 7, name: '이상현', univ: '부산대학교', team: 'Rainmate', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 8, name: '유서연', univ: '명지대학교 자연캠퍼스', team: 'Rainmate', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 9, name: '김나연', univ: '명지대학교', team: 'Rainmate', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일 (19일 밤 체크인, 20일 체크아웃)' },
-      { id: 10, name: '한영균', univ: '중앙대', team: 'ResQ4U', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 11, name: '김성은', univ: '인천대학교', team: 'Seeme', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 12, name: '문광민', univ: '부산대학교', team: 'Seeme', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 13, name: '유준서', univ: '한남대학교', team: 'Vanguard', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 14, name: '공우석', univ: '한남대학교', team: 'Vanguard', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 15, name: '주명로', univ: '한남대학교', team: 'Vanguard', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 16, name: '박승훈', univ: '강원대학교', team: '네이처', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 17, name: '엄예진', univ: '강원대학교', team: '네이처', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 18, name: '박성균', univ: '강원대학교', team: '네이처', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 19, name: '박준형', univ: '연세대학교 미래캠퍼스', team: '땅땅땅', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 20, name: '박준우', univ: '한국기술교육대학교', team: '땅땅땅', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 21, name: '이우철', univ: '연세대학교 미래캠퍼스', team: '땅땅땅', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 22, name: '유지연', univ: '한국기술교육대학교', team: '땅땅땅', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 23, name: '강남원', univ: '한국기술교육대학교', team: '땅땅땅', room: '1인실', stay: '1박 2일', dates: '11월 19일' },
-      { id: 24, name: '방기현', univ: '중앙대학교', team: '리마인두', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 25, name: '이시형', univ: '중앙대학교', team: '리마인두', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 26, name: '이시형', univ: '연세대학교 미래캠퍼스', team: '뽀송뽀송', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 27, name: '김주황', univ: '강원대학교', team: '스파크', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 28, name: '김민재', univ: '강원대학교', team: '커피박의 대반전', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 29, name: '엄지호', univ: '강원대', team: '커피박의 대반전', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 30, name: '배성준', univ: '강원대학교', team: '커피박의 대반전', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 31, name: '박현민', univ: '숭실대학교', team: '홀맨', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 32, name: '조민재', univ: '홍익대학교', team: '홀맨', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 33, name: '최강', univ: '한국기술교육대학교', team: '홀맨', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 34, name: '박도현', univ: '한국기술교육대학교', team: '홀맨', room: '1인실', stay: '1박 2일', dates: '11월 19일, 11월 20일' },
-      { id: 35, name: '신종화', univ: '중앙대학교', team: '홀인원', room: '1인실', stay: '2박 3일', dates: '11월 18일, 11월 19일, 11월 20일' },
-      { id: 36, name: '성기민', univ: '한밭대학교', team: 'Rain:on', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 37, name: '이한서', univ: '한남대학교', team: 'RAIN:ON', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 38, name: '이병렬', univ: '한남대학교', team: 'RAIN:ON', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 39, name: '임채훈', univ: '한남대학교', team: 'RAIN:ON', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 40, name: '박해미', univ: '한남대학교', team: 'RAIN:ON', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 41, name: '조지운', univ: '중앙대학교', team: 'ResQ4U', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 42, name: '황지민', univ: '경북대학교', team: 'ResQ4U', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 43, name: '김태호', univ: '숭실대학교', team: 'resQ4U', room: '당일참가', stay: '0박 1일', dates: '11월 18일' },
-      { id: 44, name: '노현주', univ: '명지대학교', team: 'ResQ4U', room: '당일참가', stay: '0박 1일', dates: '11월 19일' },
-      { id: 45, name: '선민정', univ: '중앙대학교', team: '리마인두', room: '당일참가', stay: '0박 1일', dates: '11월 18일' },
-      { id: 46, name: '류세영', univ: '공과대학', team: '리마인두', room: '당일참가', stay: '0박 1일', dates: '11월 18일' },
-      { id: 47, name: '김산들', univ: '숭실대학교', team: '뽀송뽀송', room: '당일참가', stay: '0박 1일', dates: '11월 18일' },
-      { id: 48, name: '조영유', univ: '숭실대학교', team: '뽀송뽀송', room: '당일참가', stay: '0박 1일', dates: '11월 18일' },
-      { id: 49, name: '임동균', univ: '중앙대학교', team: '홀인원', room: '당일참가', stay: '0박 1일', dates: '11월 20일' },
-      { id: 50, name: '위정훈', univ: '중앙대학교', team: '홀인원', room: '당일참가', stay: '0박 1일', dates: '11월 18일' }
+      { id: 1, name: '조현준', univ: '한남대학교', team: 'ANSIM', stay: '2박 3일', hotelRoom: '얌호텔 1', isStay: true },
+      { id: 2, name: '홍현택', univ: '한남대학교', team: 'ANSIM', stay: '2박 3일', hotelRoom: '얌호텔 2', isStay: true },
+      { id: 3, name: '이민경', univ: '한국기술교육대학교', team: 'OWNWAY', stay: '2박 3일', hotelRoom: '얌호텔 3', isStay: true },
+      { id: 4, name: '여환철', univ: '인천대학교', team: 'OWNWAY', stay: '2박 3일', hotelRoom: '얌호텔 4', isStay: true },
+      { id: 5, name: '명채은', univ: '명지대학교', team: 'OWNWAY', stay: '2박 3일', hotelRoom: '얌호텔 5', isStay: true },
+      { id: 6, name: '이선우', univ: '한국기술교육대학교', team: 'OWNWAY', stay: '2박 3일', hotelRoom: '얌호텔 6', isStay: true },
+      { id: 7, name: '이상현', univ: '부산대학교', team: 'Rainmate', stay: '2박 3일', hotelRoom: '얌호텔 7', isStay: true },
+      { id: 8, name: '유서연', univ: '명지대학교 자연캠퍼스', team: 'Rainmate', stay: '1박 2일', hotelRoom: '얌호텔 8', isStay: true },
+      { id: 9, name: '김나연', univ: '명지대학교', team: 'Rainmate', stay: '1박 2일', hotelRoom: '얌호텔 9', isStay: true },
+      { id: 10, name: '한영균', univ: '중앙대', team: 'ResQ4U', stay: '1박 2일', hotelRoom: '얌호텔 10', isStay: true },
+      { id: 11, name: '김성은', univ: '인천대학교', team: 'Seeme', stay: '2박 3일', hotelRoom: '얌호텔 11', isStay: true },
+      { id: 12, name: '문광민', univ: '부산대학교', team: 'Seeme', stay: '1박 2일', hotelRoom: '얌호텔 12', isStay: true },
+      { id: 13, name: '유준서', univ: '한남대학교', team: 'Vanguard', stay: '2박 3일', hotelRoom: '얌호텔 13', isStay: true },
+      { id: 14, name: '공우석', univ: '한남대학교', team: 'Vanguard', stay: '2박 3일', hotelRoom: '얌호텔 14', isStay: true },
+      { id: 15, name: '주명로', univ: '한남대학교', team: 'Vanguard', stay: '2박 3일', hotelRoom: '얌호텔 15', isStay: true },
+      { id: 16, name: '박승훈', univ: '강원대학교', team: '네이처', stay: '1박 2일', hotelRoom: '얌호텔 16', isStay: true },
+      { id: 17, name: '엄예진', univ: '강원대학교', team: '네이처', stay: '1박 2일', hotelRoom: '얌호텔 17', isStay: true },
+      { id: 18, name: '박성균', univ: '강원대학교', team: '네이처', stay: '1박 2일', hotelRoom: '얌호텔 18', isStay: true },
+      { id: 19, name: '박준형', univ: '연세대학교 미래캠퍼스', team: '땅땅땅', stay: '2박 3일', hotelRoom: '얌호텔 19', isStay: true },
+      { id: 20, name: '박준우', univ: '한국기술교육대학교', team: '땅땅땅', stay: '2박 3일', hotelRoom: '얌호텔 20', isStay: true },
+      { id: 21, name: '이우철', univ: '연세대학교 미래캠퍼스', team: '땅땅땅', stay: '2박 3일', hotelRoom: '얌호텔 21', isStay: true },
+      { id: 22, name: '유지연', univ: '한국기술교육대학교', team: '땅땅땅', stay: '2박 3일', hotelRoom: '얌호텔 22', isStay: true },
+      { id: 23, name: '강남원', univ: '한국기술교육대학교', team: '땅땅땅', stay: '1박 2일', hotelRoom: '얌호텔 23', isStay: true },
+      { id: 24, name: '방기현', univ: '중앙대학교', team: '리마인두', stay: '1박 2일', hotelRoom: '얌호텔 24', isStay: true },
+      { id: 25, name: '이시형', univ: '중앙대학교', team: '리마인두', stay: '1박 2일', hotelRoom: '얌호텔 25', isStay: true },
+      { id: 26, name: '이시형', univ: '연세대학교 미래캠퍼스', team: '뽀송뽀송', stay: '1박 2일', hotelRoom: '얌호텔 26', isStay: true },
+      { id: 27, name: '김주황', univ: '강원대학교', team: '스파크', stay: '2박 3일', hotelRoom: '얌호텔 27', isStay: true },
+      { id: 28, name: '김민재', univ: '강원대학교', team: '커피박의 대반전', stay: '1박 2일', hotelRoom: '란타나 1', isStay: true },
+      { id: 29, name: '엄지호', univ: '강원대', team: '커피박의 대반전', stay: '1박 2일', hotelRoom: '란타나 2', isStay: true },
+      { id: 30, name: '배성준', univ: '강원대학교', team: '커피박의 대반전', stay: '1박 2일', hotelRoom: '란타나 3', isStay: true },
+      { id: 31, name: '박현민', univ: '숭실대학교', team: '홀맨', stay: '2박 3일', hotelRoom: '란타나 4', isStay: true },
+      { id: 32, name: '조민재', univ: '홍익대학교', team: '홀맨', stay: '2박 3일', hotelRoom: '란타나 5', isStay: true },
+      { id: 33, name: '최강', univ: '한국기술교육대학교', team: '홀맨', stay: '1박 2일', hotelRoom: '란타나 6', isStay: true },
+      { id: 34, name: '박도현', univ: '한국기술교육대학교', team: '홀맨', stay: '1박 2일', hotelRoom: '란타나 7', isStay: true },
+      { id: 35, name: '신종화', univ: '중앙대학교', team: '홀인원', stay: '2박 3일', hotelRoom: '란타나 8', isStay: true },
+      // Day Participants (Excluded from lodging)
+      { id: 36, name: '성기민', univ: '한밭대학교', team: 'Rain:on', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 37, name: '이한서', univ: '한남대학교', team: 'RAIN:ON', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 38, name: '이병렬', univ: '한남대학교', team: 'RAIN:ON', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 39, name: '임채훈', univ: '한남대학교', team: 'RAIN:ON', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 40, name: '박해미', univ: '한남대학교', team: 'RAIN:ON', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 41, name: '조지운', univ: '중앙대학교', team: 'ResQ4U', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 42, name: '황지민', univ: '경북대학교', team: 'ResQ4U', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 43, name: '김태호', univ: '숭실대학교', team: 'resQ4U', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 44, name: '노현주', univ: '명지대학교', team: 'ResQ4U', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 45, name: '선민정', univ: '중앙대학교', team: '리마인두', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 46, name: '류세영', univ: '공과대학', team: '리마인두', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 47, name: '김산들', univ: '숭실대학교', team: '뽀송뽀송', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 48, name: '조영유', univ: '숭실대학교', team: '뽀송뽀송', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 49, name: '임동균', univ: '중앙대학교', team: '홀인원', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false },
+      { id: 50, name: '위정훈', univ: '중앙대학교', team: '홀인원', stay: '0박 1일', hotelRoom: '숙소 제외 (당일 참가)', isStay: false }
     ];
 
-    // =========================================================================
-    // 3. Toast & Clipboard Helper (alert() 사용 금지 규칙 준수)
-    // =========================================================================
     let toastTimeout;
     function showToast(message) {
       const container = document.getElementById('toast-container');
@@ -830,7 +638,6 @@
       msgEl.textContent = message;
       container.classList.remove('opacity-0', 'translate-y-4');
       container.classList.add('opacity-100', 'translate-y-0');
-
       clearTimeout(toastTimeout);
       toastTimeout = setTimeout(() => {
         container.classList.remove('opacity-100', 'translate-y-0');
@@ -847,16 +654,12 @@
         document.execCommand('copy');
         showToast(`주소가 복사되었습니다: ${address}`);
       } catch (err) {
-        showToast('주소 복사에 실패했습니다.');
+        showToast('복사에 실패했습니다.');
       }
       document.body.removeChild(tempInput);
     }
 
-    // =========================================================================
-    // 4. Sticky Navigation Tab Control
-    // =========================================================================
     function switchMainTab(tab) {
-      // Update button active styles
       document.querySelectorAll('.nav-tab-btn').forEach(btn => {
         btn.classList.remove('bg-[#0052CC]', 'text-white', 'shadow-sm', 'font-bold');
         btn.classList.add('text-slate-600', 'hover:bg-slate-100', 'font-semibold');
@@ -867,7 +670,6 @@
         activeBtn.classList.add('bg-[#0052CC]', 'text-white', 'shadow-sm', 'font-bold');
       }
 
-      // Show/Hide sections cleanly
       const sections = {
         dining: document.getElementById('section-dining'),
         lodging: document.getElementById('section-lodging'),
@@ -878,22 +680,13 @@
         Object.values(sections).forEach(sec => sec.classList.remove('hidden'));
       } else {
         Object.entries(sections).forEach(([key, sec]) => {
-          if (key === tab) {
-            sec.classList.remove('hidden');
-          } else {
-            sec.classList.add('hidden');
-          }
+          if (key === tab) sec.classList.remove('hidden');
+          else sec.classList.add('hidden');
         });
-        window.scrollTo({
-          top: document.getElementById('sticky-nav').offsetTop,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: document.getElementById('sticky-nav').offsetTop, behavior: 'smooth' });
       }
     }
 
-    // =========================================================================
-    // 5. Render & Filter Restaurants
-    // =========================================================================
     function renderRestaurants(mealFilter = 'all') {
       const grid = document.getElementById('restaurant-grid');
       const filtered = mealFilter === 'all'
@@ -903,74 +696,40 @@
       grid.innerHTML = filtered.map(r => {
         const naverUrl = `https://map.naver.com/p/search/${encodeURIComponent(r.address)}`;
         const kakaoUrl = `https://map.kakao.com/link/search/${encodeURIComponent(r.address)}`;
-
         return `
-          <article class="bg-white rounded-2xl border ${r.isPending ? 'border-amber-300 bg-amber-50/10' : 'border-slate-200/90'} shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+          <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
             <div class="p-5 sm:p-6">
-              <!-- Top Badges -->
               <div class="flex items-center justify-between gap-2 mb-3">
-                <div class="flex items-center gap-1.5">
-                  <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border ${r.badgeColor}">
-                    ${r.mealLabel}
-                  </span>
-                  ${r.isPending
-                    ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-amber-500 text-white animate-pulse"><i class="fa-solid fa-clock mr-1"></i>확인 중</span>`
-                    : `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-50 text-[#0052CC]">지정 식당</span>`
-                  }
-                </div>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border ${r.badgeColor}">${r.mealLabel} 지정</span>
                 <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">
                   <i class="fa-solid fa-person-walking text-[#0052CC] mr-1"></i>${r.distance}
                 </span>
               </div>
-
-              <!-- Restaurant Name -->
               <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mb-4">${r.name}</h3>
-
-              <!-- Designated Menu Box (2 options) -->
               <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200/70 mb-4">
-                <div class="text-[11px] font-extrabold text-[#0052CC] uppercase tracking-wider mb-2">
-                  지정 메뉴 (2종 중 택1)
-                </div>
+                <div class="text-[11px] font-extrabold text-[#0052CC] uppercase tracking-wider mb-2">지정 메뉴 (2종 중 택1)</div>
                 <div class="space-y-1.5 text-xs sm:text-sm">
-                  <div class="flex items-center gap-2">
-                    <span class="px-1.5 py-0.5 rounded bg-[#0052CC] text-white text-[10px] font-extrabold">메뉴 A</span>
-                    <span class="font-bold text-slate-800">${r.menuA}</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="px-1.5 py-0.5 rounded bg-slate-700 text-white text-[10px] font-extrabold">메뉴 B</span>
-                    <span class="font-bold text-slate-800">${r.menuB}</span>
-                  </div>
+                  <div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-[#0052CC] text-white text-[10px] font-extrabold">메뉴 A</span><span class="font-bold text-slate-800">${r.menuA}</span></div>
+                  <div class="flex items-center gap-2"><span class="px-1.5 py-0.5 rounded bg-slate-700 text-white text-[10px] font-extrabold">메뉴 B</span><span class="font-bold text-slate-800">${r.menuB}</span></div>
                 </div>
               </div>
-
-              <!-- Point / Notice -->
-              <div class="flex items-start gap-2 text-xs ${r.isPending ? 'text-amber-800 bg-amber-100/70' : 'text-slate-700 bg-blue-50/70'} rounded-xl p-3 mb-4">
-                <i class="fa-solid fa-circle-exclamation mt-0.5 ${r.isPending ? 'text-amber-600' : 'text-[#0052CC]'}"></i>
+              <div class="flex items-start gap-2 text-xs text-slate-700 bg-blue-50/70 rounded-xl p-3 mb-4">
+                <i class="fa-solid fa-circle-exclamation mt-0.5 text-[#0052CC]"></i>
                 <span class="font-medium leading-relaxed">${r.point}</span>
               </div>
-
-              <!-- Address & Phone -->
               <div class="space-y-1.5 text-xs text-slate-600">
-                <div class="flex items-start gap-2">
-                  <i class="fa-solid fa-location-dot text-slate-400 mt-0.5 w-3.5 text-center"></i>
-                  <span class="leading-snug">${r.address}</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-phone text-slate-400 w-3.5 text-center"></i>
-                  <a href="tel:${r.phone}" class="hover:text-[#0052CC] font-medium">${r.phone}</a>
-                </div>
+                <div class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-slate-400 mt-0.5"></i><span>${r.address}</span></div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-slate-400"></i><a href="tel:${r.phone}" class="hover:text-[#0052CC] font-medium">${r.phone}</a></div>
               </div>
             </div>
-
-            <!-- Card Footer Actions -->
             <div class="px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center gap-2">
               <button onclick="copyAddress('${r.address}')" class="flex-1 py-2 px-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#0052CC] text-slate-700 hover:text-[#0052CC] text-xs font-bold transition-colors flex items-center justify-center gap-1">
                 <i class="fa-regular fa-copy"></i> 주소 복사
               </button>
-              <a href="${naverUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#03C75A] hover:bg-[#02b350] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1">
+              <a href="${naverUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#03C75A] text-white text-xs font-bold flex items-center justify-center gap-1">
                 <span class="font-extrabold">N</span> 네이버
               </a>
-              <a href="${kakaoUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#FEE500] hover:bg-[#f5dc00] text-slate-900 text-xs font-bold transition-colors flex items-center justify-center gap-1">
+              <a href="${kakaoUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 px-2.5 rounded-xl bg-[#FEE500] text-slate-900 text-xs font-bold flex items-center justify-center gap-1">
                 <i class="fa-solid fa-map-pin"></i> 카카오
               </a>
             </div>
@@ -982,22 +741,18 @@
     function filterRestaurants(mealType) {
       document.querySelectorAll('.meal-filter-btn').forEach(btn => {
         if (btn.dataset.meal === mealType) {
-          btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'hover:bg-slate-50', 'font-semibold');
+          btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
           btn.classList.add('bg-[#0052CC]', 'text-white', 'shadow-sm', 'font-bold');
         } else {
           btn.classList.remove('bg-[#0052CC]', 'text-white', 'shadow-sm', 'font-bold');
-          btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'hover:bg-slate-50', 'font-semibold');
+          btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200', 'font-semibold');
         }
       });
       renderRestaurants(mealType);
     }
 
-    // =========================================================================
-    // 6. Populate Team Filter & Render Students
-    // =========================================================================
     function initTeamDropdown() {
       const teamSelect = document.getElementById('team-filter');
-      // Normalize case-insensitive duplicate team names (e.g., Rain:on vs RAIN:ON, ResQ4U vs resQ4U) for clean grouping
       const normalizedMap = new Map();
       studentsData.forEach(s => {
         const key = s.team.toLowerCase();
@@ -1005,7 +760,6 @@
           normalizedMap.set(key, s.team.toUpperCase() === 'RAIN:ON' ? 'RAIN:ON' : (key === 'resq4u' ? 'ResQ4U' : s.team));
         }
       });
-
       const sortedTeams = Array.from(normalizedMap.entries()).sort((a, b) => a[1].localeCompare(b[1], 'ko'));
       sortedTeams.forEach(([key, label]) => {
         const opt = document.createElement('option');
@@ -1027,57 +781,31 @@
         emptyState.classList.remove('hidden');
         return;
       }
-
       emptyState.classList.add('hidden');
       const isSearching = searchQuery.trim().length > 0;
 
       grid.innerHTML = list.map(s => {
-        let stayBadgeClass = '';
-        let borderHighlight = 'border-slate-200';
-        if (s.stay === '2박 3일') {
-          stayBadgeClass = 'bg-blue-100 text-[#0052CC] border-blue-200';
-        } else if (s.stay === '1박 2일') {
-          stayBadgeClass = 'bg-indigo-100 text-indigo-700 border-indigo-200';
-        } else {
-          stayBadgeClass = 'bg-emerald-100 text-emerald-700 border-emerald-200';
-        }
-
-        if (isSearching) {
-          borderHighlight = 'border-[#0052CC] ring-2 ring-blue-500/20 highlight-card';
-        }
+        let stayBadge = s.stay === '2박 3일' ? 'bg-blue-100 text-[#0052CC] border-blue-200' : (s.stay === '1박 2일' ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-slate-100 text-slate-600 border-slate-200');
+        let roomBadgeColor = s.isStay ? 'bg-blue-50 text-[#0052CC]' : 'bg-slate-100 text-slate-500';
+        let highlight = isSearching ? 'border-[#0052CC] ring-2 ring-blue-500/20 highlight-card' : 'border-slate-200';
 
         return `
-          <div class="bg-white rounded-2xl border ${borderHighlight} p-4 sm:p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+          <div class="bg-white rounded-2xl border ${highlight} p-4 sm:p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div class="flex items-start justify-between gap-2 mb-3">
                 <div>
                   <div class="flex items-center gap-2">
                     <span class="text-base sm:text-lg font-extrabold text-slate-900">${s.name}</span>
-                    <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">
-                      ${s.team}
-                    </span>
+                    <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">${s.team}</span>
                   </div>
-                  <div class="text-xs text-slate-500 font-medium mt-0.5">
-                    <i class="fa-solid fa-graduation-cap text-slate-400 mr-1"></i>${s.univ}
-                  </div>
+                  <div class="text-xs text-slate-500 font-medium mt-0.5"><i class="fa-solid fa-graduation-cap text-slate-400 mr-1"></i>${s.univ}</div>
                 </div>
-                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border shrink-0 ${stayBadgeClass}">
-                  ${s.stay}
-                </span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold border shrink-0 ${stayBadge}">${s.stay}</span>
               </div>
-
               <div class="pt-3 border-t border-slate-100 space-y-2 text-xs">
                 <div class="flex items-center justify-between">
-                  <span class="text-slate-400 font-medium">참가 / 객실 유형</span>
-                  <span class="font-bold text-slate-800">
-                    ${s.room === '1인실'
-                      ? '<i class="fa-solid fa-bed text-[#0052CC] mr-1"></i>더블룸 1인실'
-                      : '<i class="fa-solid fa-person-walking-arrow-right text-emerald-600 mr-1"></i>당일참가 (숙박 미배정)'}
-                  </span>
-                </div>
-                <div class="bg-slate-50 rounded-xl p-2.5 border border-slate-100">
-                  <div class="text-[11px] text-slate-400 font-semibold mb-0.5">세부 참여·숙박 일자</div>
-                  <div class="font-bold text-slate-800 leading-snug">${s.dates}</div>
+                  <span class="text-slate-400 font-medium">방배정 / 숙소</span>
+                  <span class="font-bold px-2.5 py-1 rounded-lg ${roomBadgeColor}">${s.hotelRoom}</span>
                 </div>
               </div>
             </div>
@@ -1093,25 +821,18 @@
       const stayFilter = document.getElementById('stay-filter').value;
       const query = searchInput.value.trim().toLowerCase();
 
-      if (query.length > 0) {
-        clearBtn.classList.remove('hidden');
-      } else {
-        clearBtn.classList.add('hidden');
-      }
+      if (query.length > 0) clearBtn.classList.remove('hidden');
+      else clearBtn.classList.add('hidden');
 
       const filtered = studentsData.filter(s => {
-        const matchesQuery =
-          query === '' ||
-          s.name.toLowerCase().includes(query) ||
-          s.univ.toLowerCase().includes(query) ||
-          s.team.toLowerCase().includes(query);
-
-        const matchesTeam =
-          teamFilter === 'all' || s.team.toLowerCase() === teamFilter;
-
-        const matchesStay =
-          stayFilter === 'all' || s.stay === stayFilter;
-
+        const matchesQuery = query === '' || s.name.toLowerCase().includes(query) || s.univ.toLowerCase().includes(query) || s.team.toLowerCase().includes(query);
+        const matchesTeam = teamFilter === 'all' || s.team.toLowerCase() === teamFilter;
+        let matchesStay = true;
+        if (stayFilter === '숙박대상') {
+          matchesStay = s.isStay === true;
+        } else if (stayFilter === '당일참가') {
+          matchesStay = s.isStay === false;
+        }
         return matchesQuery && matchesTeam && matchesStay;
       });
 
@@ -1130,9 +851,6 @@
       filterStudents();
     }
 
-    // =========================================================================
-    // 7. Scroll Spy & Back-To-Top Button Visibility
-    // =========================================================================
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('back-to-top');
       if (window.scrollY > 350) {
@@ -1144,7 +862,6 @@
       }
     });
 
-    // Initialize Page on Load
     document.addEventListener('DOMContentLoaded', () => {
       renderRestaurants('all');
       initTeamDropdown();
